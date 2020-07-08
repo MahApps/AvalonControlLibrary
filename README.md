@@ -1,2 +1,3 @@
 # AvalonControlLibrary
-AvalonControlLibrary from CodePlex
+
+This is AvalonControlLibrary downloaded from [CodePlex](http://avaloncontrolslib.codeplex.com).
