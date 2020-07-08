@@ -12,6 +12,7 @@
         <ResourceDictionary Source="/AvalonControlsLibrary;component/Themes/TimePicker.xaml"/>
         <ResourceDictionary Source="/AvalonControlsLibrary;component/Themes/DockableControl.xaml"/>
         <ResourceDictionary Source="/AvalonControlsLibrary;component/Themes/DateTimePicker.xaml"/>
+        <ResourceDictionary Source="/AvalonControlsLibrary;component/Themes/TimeSpanPicker.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

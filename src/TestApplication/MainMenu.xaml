@@ -18,6 +18,7 @@
         <Button Content="Magnifier Demo" Click="MagnifierClick"/>
         <Button Content="Date Picker Demo" Click="DatePickerClick"/>
         <Button Content="Time Picker Demo" Click="TimePickerClick"/>
+        <Button Content="Time Span Picker Demo" Click="TimeSpanPickerClick"/>
         <Button Content="Date Time Picker" Click="DateTimePickerClick" />
         <Button Content="TreeListBox Demo" Click="HListBoxClick"/>
     </StackPanel>

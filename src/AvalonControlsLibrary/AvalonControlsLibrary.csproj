@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{F2E7B3F0-E03E-4341-984F-2962ACA8C07E}</ProjectGuid>
     <OutputType>library</OutputType>
@@ -14,7 +14,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>AvalonControlsLibrary.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -60,6 +60,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\TimeSpanPicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\DatePicker.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -100,6 +104,7 @@
     <Compile Include="Controls\MaskedTextBox.cs" />
     <Compile Include="Controls\RatingSelector.cs" />
     <Compile Include="Controls\TimePicker.cs" />
+    <Compile Include="Controls\TimeSpanPicker.cs" />
     <Compile Include="Controls\TreeListBox.cs" />
     <Compile Include="Controls\Magnifier.cs" />
     <Compile Include="Controls\RangeSlider.cs" />
@@ -112,11 +117,13 @@
     <Compile Include="Core\GridViewCustomComparer.cs" />
     <Compile Include="Core\GridViewSortHandler.cs" />
     <Compile Include="Core\MathUtil.cs" />
+    <Compile Include="Core\MidDayDictionary.cs" />
     <Compile Include="Core\OneWayValueConverters.cs" />
     <Compile Include="Core\PropertyInfoEngine.cs" />
     <Compile Include="Controls\DataGridView.cs" />
     <Compile Include="Controls\DataGridViewColumn.cs" />
     <Compile Include="Core\ReflectionHelper.cs" />
+    <Compile Include="Core\ShortDayDictionary.cs" />
     <Compile Include="Exception\ExceptionStrings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

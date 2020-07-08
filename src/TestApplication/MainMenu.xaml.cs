@@ -52,6 +52,10 @@ namespace TestApplication
             new TimePickerTest().Show();
         }
 
+        private void TimeSpanPickerClick(object sender, RoutedEventArgs e) {
+          new TimeSpanPickerTest().Show();
+        }
+
         private void DateTimePickerClick(object sender, RoutedEventArgs e)
         {
             new DateTimePickerTest().Show();

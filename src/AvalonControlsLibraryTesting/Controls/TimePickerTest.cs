@@ -70,9 +70,9 @@ namespace AvalonControlsLibraryTesting.Controls
                 picker.SelectedMinute = 2;
                 picker.SelectedSecond = 3;
                 
-                Assert.AreEqual(1, picker.SelectedTime.Hours, "Invalid hour set");
-                Assert.AreEqual(2, picker.SelectedTime.Minutes, "Invalid minute set");
-                Assert.AreEqual(3, picker.SelectedTime.Seconds, "Invalid second set");
+                Assert.AreEqual(1, picker.SelectedTime.Value.Hours, "Invalid hour set");
+                Assert.AreEqual(2, picker.SelectedTime.Value.Minutes, "Invalid minute set");
+                Assert.AreEqual(3, picker.SelectedTime.Value.Seconds, "Invalid second set");
 
                 //try to set some invalid values
                 picker = new TimePicker();
@@ -87,10 +87,10 @@ namespace AvalonControlsLibraryTesting.Controls
                 hasEventFired = false;
                 picker.SelectedSecond = 99;
                 Assert.IsTrue(hasEventFired, "Event not fired");
-                
-                Assert.AreEqual(23, picker.SelectedTime.Hours, "Invalid hour set");
-                Assert.AreEqual(2, picker.SelectedTime.Minutes, "Invalid minute set");
-                Assert.AreEqual(59, picker.SelectedTime.Seconds, "Invalid second set");
+
+                Assert.AreEqual(23, picker.SelectedTime.Value.Hours, "Invalid hour set");
+                Assert.AreEqual(2, picker.SelectedTime.Value.Minutes, "Invalid minute set");
+                Assert.AreEqual(59, picker.SelectedTime.Value.Seconds, "Invalid second set");
             });
         }
 
@@ -99,15 +99,18 @@ namespace AvalonControlsLibraryTesting.Controls
         {
             AvalonTestRunner.RunInSTA(delegate
             {
+              Assert.Fail("Rewrite this text to use instance method of ExposeAdjustCarretIndex...");
+              TimePicker subject = new TimePicker();
+
                 TextBox textBox = new TextBox();
                 TextBox neighbour = new TextBox();
                 textBox.Text = "10";
-                TimePicker.ExposeAdjustCarretIndexOrMoveToNeighbour(textBox, neighbour);
+                subject.ExposeAdjustCarretIndexOrMoveToNeighbour(textBox);
                 Assert.AreEqual(1, textBox.CaretIndex, "Invalid caret index");
                 Assert.IsFalse(neighbour.IsFocused, "Neighbour is focused");
 
                 //the carrot is now moved...try to call the method again to focus the neighbour
-                TimePicker.ExposeAdjustCarretIndexOrMoveToNeighbour(textBox, neighbour);
+                subject.ExposeAdjustCarretIndexOrMoveToNeighbour(textBox);
                 Assert.IsTrue(neighbour.IsFocused, "Neighbour is not focused");
 
 
@@ -119,6 +122,8 @@ namespace AvalonControlsLibraryTesting.Controls
         {
             AvalonTestRunner.RunInSTA(delegate
             {
+              Assert.Fail("Rewrite this text to use instance method of ExposeTryFocusNeighbourControl...");
+              TimePicker subject = new TimePicker();
                 TextBox current = new TextBox();
                 TextBox left = new TextBox();
                 TextBox right = new TextBox();
@@ -127,13 +132,13 @@ namespace AvalonControlsLibraryTesting.Controls
                 current.CaretIndex = 2;
 
                 //test going focus left with null
-                TimePicker.ExposeTryFocusNeighbourControl(current, null, null, Key.Left);
+                subject.ExposeTryFocusNeighbourControl(current, Key.Left);
                 //now test with left textbox but with the invalid caret index
-                TimePicker.ExposeTryFocusNeighbourControl(current, left, right, Key.Left);
+                subject.ExposeTryFocusNeighbourControl(current, Key.Left);
                 Assert.IsFalse(left.IsFocused, "left was focused");
 
                 current.CaretIndex = 0;
-                TimePicker.ExposeTryFocusNeighbourControl(current, left, right, Key.Left);
+                subject.ExposeTryFocusNeighbourControl(current, Key.Left);
                 Assert.IsTrue(left.IsFocused, "left was NOT focused");
 
                 current = new TextBox();
@@ -143,13 +148,13 @@ namespace AvalonControlsLibraryTesting.Controls
                 current.Text = "10";
                 current.CaretIndex = 0;
                 //test going focus right with null
-                TimePicker.ExposeTryFocusNeighbourControl(current, null, null, Key.Right);
+                subject.ExposeTryFocusNeighbourControl(current, Key.Right);
                 //now test with right textbox but with the invalid caret index
-                TimePicker.ExposeTryFocusNeighbourControl(current, left, right, Key.Right);
+                subject.ExposeTryFocusNeighbourControl(current, Key.Right);
                 Assert.IsFalse(right.IsFocused, "right was focused");
 
                 current.CaretIndex = 2;
-                TimePicker.ExposeTryFocusNeighbourControl(current, left, right, Key.Right);
+                subject.ExposeTryFocusNeighbourControl(current, Key.Right);
                 Assert.IsTrue(right.IsFocused, "right was NOT focused");
 
 

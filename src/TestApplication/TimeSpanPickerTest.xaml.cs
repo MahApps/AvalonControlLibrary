@@ -16,12 +16,12 @@ namespace TestApplication
     /// <summary>
     /// Interaction logic for TimePickerTest.xaml
     /// </summary>
-    public partial class TimePickerTest : Window
+    public partial class TimeSpanPickerTest : Window
     {
-        public TimePickerTest()
+      public TimeSpanPickerTest()
         {
             InitializeComponent();
-            timePicker.MinTime = DateTime.Now.TimeOfDay.Subtract(new TimeSpan(1, 0, 0));
+            timePicker.MinTime = DateTime.Now.TimeOfDay.Subtract(new TimeSpan(34, 1, 0, 0));
             //timePicker.SelectedTimeChanged += delegate(object sender, TimeSelectedChangedRoutedEventArgs e)
             //{
             //    MessageBox.Show(String.Format("New Time: {0}\nOld Time: {1}", 

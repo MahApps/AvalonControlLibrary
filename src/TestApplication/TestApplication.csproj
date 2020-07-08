@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{2F2C75E0-73D0-4F46-8A86-39132E91A35A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -61,6 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BrowserLink.cs" />
+    <Compile Include="TimeSpanPickerTest.xaml.cs">
+      <DependentUpon>TimeSpanPickerTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataGridViewTest.xaml.cs">
       <DependentUpon>DataGridViewTest.xaml</DependentUpon>
     </Compile>
@@ -111,6 +114,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="TimeSpanPickerTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="DataGridViewTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -171,6 +178,9 @@
       <Project>{F2E7B3F0-E03E-4341-984F-2962ACA8C07E}</Project>
       <Name>AvalonControlsLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

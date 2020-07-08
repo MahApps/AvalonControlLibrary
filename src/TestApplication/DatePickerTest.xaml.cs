@@ -29,7 +29,7 @@ namespace TestApplication
             datePicker.SelectedDateChanged += delegate(object sender, DateSelectedChangedRoutedEventArgs e)
             {
                 MessageBox.Show(String.Format("New Date: {0}\nOld Date: {1}",
-                        e.NewDate.ToShortDateString(), e.OldDate.ToShortDateString()));
+                        e.NewDate.Value.ToShortDateString(), e.OldDate.Value.ToShortDateString()));
             };
         }
     }
